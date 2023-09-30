@@ -6,7 +6,7 @@ html, * {
 
 body {
     display: grid;
-    grid-template-columns: 12rem 1fr 1fr 1fr;
+    grid-template-columns: 15rem 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     height: 100vh;
     font-size: 18px;
@@ -18,9 +18,20 @@ body {
     grid-row: span 4;
     padding: 10px;
     display: grid;
-
+    align-content: start;
+    gap: 5px;
 }
 
+.sidebar-logo {  
+    display: flex;
+    min-height: 50px;
+    align-items: center;
+}
+.sidebar-link {
+    display: flex;
+    min-height: 25px;  
+}
+    
 .header {
     background-color: white;
     grid-column: span 3;
