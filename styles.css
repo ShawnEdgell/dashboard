@@ -9,23 +9,41 @@ body {
     grid-template-columns: 12rem 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     height: 100vh;
+    font-size: 18px;
 }
 
 .sidebar {
-    background-color: bisque;
+    background-color: #1992d4;
+    color: white;
     grid-row: span 4;
+    padding: 10px;
+    display: grid;
 
 }
 
 .header {
-    background-color: lightcyan;
+    background-color: white;
     grid-column: span 3;
+    padding: 10px;
+    display: grid;
 }
 
 .articles {
-    background-color: lightgray;
+    background-color: #e2e8f0;
     grid-column: span 3;
     grid-row: span 3;
     display: grid;
     grid-template-columns: 2fr 1fr;
+    padding: 10px;
+    gap: 10px;
 }
+
+.header-cell {
+    padding: 10px;
+}
+
+.card {
+    background-color: white;
+    padding: 10px;
+}
+
