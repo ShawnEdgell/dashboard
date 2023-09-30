@@ -1,68 +1,11 @@
 * {
+    border: 1px solid red;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    border: 1px solid red;
-  }
-
-  body {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    margin: 0; /* Remove the default margin */
-    max-width: 100%; /* Allow the body to expand to the full width */
-  }
-
-  .sidebar {
-    flex: 1; /* Change to flex: 1 to make the sidebar extend the full height */
-    background-color: slategray;
-    padding: 20px;
-  }
-
-  .navbar {
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
-    text-align: center;
-  }
-  
-  .navbar ul {
-    list-style: none;
-  }
-  
-  .navbar ul li {
-    display: inline;
-    margin: 0 15px;
-  }
-  
-  .navbar a {
-    text-decoration: none;
-    color: white;
-  }
-  
-.container {
-  display: flex; /* Make the container a flex container */
-  flex: 1; /* Let the container take up all available vertical space */
-  
 }
-  
-  .sidebar {
-    flex: 0 0 200px; /* Fixed width for the sidebar */
-    background-color: slategray;
-    padding: 20px;
-  }
-  
-  .article {
+
+body {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Maximum of 3 columns per row */
-    grid-auto-flow: row; /* Rows will be created automatically */
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 100vh;
 }
-  .card {
-    background-color: #FFFFFF;
-    color: black;
-    text-align: center;
-    padding: 20px;
-  }
