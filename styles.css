@@ -19,11 +19,10 @@ body {
     display: grid;
     align-content: start;
     gap: 5px;
-    min-height: 100vh; /* Set the minimum height to 100% of the viewport height */
+    min-height: 100vh;
 }
 
 .sidebar-logo {  
-    display: flex;
     min-height: 50px;
     font-size: 24px;
     display: flex;
@@ -31,11 +30,22 @@ body {
     font-weight: bold;
 }
 
-.sidebar-link {
-    display: flex;
-    min-height: 25px;  
+.sidebar-button {
+    min-height: 25px;
     align-items: center;
     font-weight: 700;
+    background-color: #1992d4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 8px 0;
+    text-align: left;
+    transition: background-color 0.3s, color 0.3s;
+    width: 100%;
+}
+
+.sidebar-button:hover {
+    background-color: #1574b6;
 }
 
 .header {
@@ -95,7 +105,7 @@ body {
 
 .card-2 {
     background-color: #e2e8f0;
-    padding: 10px 10px 10px 10px;
+    padding: 10px;
     display: grid;
     gap: 10px;
     grid-template-columns: 1fr;
@@ -127,8 +137,17 @@ body {
 .projects, .announcements, .trending {
     background-color: white;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     padding: 20px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.projects:hover, .announcements:hover, .trending:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3); 
+    z-index: 1;
+    cursor: pointer;
 }
 
 .projects {
@@ -145,12 +164,12 @@ body {
 .trending {
     display: grid;
     gap: 10px;
-    padding: 10px;
+    padding: 20px;
     grid-template-rows: 1fr 1fr 1fr 1fr;
 }
 
 .button {
-    background-color:  #1992d4;
+    background-color: #1992d4;
     color: white;
     padding: 10px 28px;
     text-align: center;
@@ -158,6 +177,11 @@ body {
     display: inline-block;
     font-size: 16px;
     border-radius: 25px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.button:hover {
+    background-color: #1574b6;
 }
 
 .search-container, #form {
@@ -167,10 +191,21 @@ body {
     margin-right: 60px;
 }
 
+.search-logo {
+    display: flex;
+    justify-content: center;
+    transition: transform 0.2s ease-in-out;
+}
+
 .icon {
     display: flex;
     align-items: center;
-    white-space: nowrap; /* Prevent text from wrapping */
+    white-space: nowrap;
+    transition: transform 0.2s ease-in-out;
+}
+
+.icon:hover, .search-logo:hover, .welcome-icon:hover {
+    transform: scale(1.05);
 }
 
 .welcome {
@@ -180,31 +215,32 @@ body {
 
 .welcome-icon {
     grid-row: span 2;
+    display: flex;
+    transition: transform 0.2s ease-in-out;
 }
 
 #form {
     display: flex;
     align-items: center;
-    background-color: #d8d8d8; /* Light gray background */
-    border-radius: 25px; /* Rounded corners */
-    padding: 10px 15px; /* Adjusted padding to make the search bar narrower */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle box shadow */
-    width: 100%; /* Set the width to 100% to span the entire cell */
+    background-color: #d6d6d6;
+    border-radius: 25px;
+    padding: 10px 15px;
+    width: 100%;
 }
 
 #query {
-    flex: 1; /* Expand to fill available space */
-    border: none; /* Remove the border */
-    background: none; /* Remove background color */
+    flex: 1;
+    border: none;
+    background: none;
     font-size: 16px;
 }
 
 button {
-    background: none; /* Remove the background color */
-    border: none; /* Remove the border */
+    background: none;
+    border: none;
     font-size: 16px;
     cursor: pointer;
-    color: #1992d4; /* Blue text color */
+    color: #1992d4;
 }
 
 #hello {
@@ -212,24 +248,47 @@ button {
     align-items: end;
 }
 
+.projects > p, .users > p {
+    font-size: 14px;
+}
+
 p {
     font-size: 12px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
 }
 
 h3, h6, .article-title-1 {
     white-space: nowrap;
 }
 
+.users:hover {
+    background-color: #f0b429;
+    color: white;
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer;
+}
+
+.users {
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
 @media (max-width: 800px) {
     .articles {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
         padding: 0;
         margin: 0;
     }
+}
 
 @media (max-width: 600px) {
     body, .articles, .header-cell-1, .header-cell-2, .header {
-        grid-template-columns: 1fr; 
+        grid-template-columns: 1fr;
         padding: 0;
         margin: 0;
     }
@@ -239,39 +298,41 @@ h3, h6, .article-title-1 {
         justify-content: center;
         align-items: center;
         flex-direction: column;
-        gap:10px;
+        gap: 10px;
+        height: 50vh !important;
     }
 
-    .sidebar-link, .sidebar-logo {
+    .sidebar-button, .sidebar-logo {
         text-align: center;
     }
 
-    .sidebar-link {
+    .sidebar-button {
         font-size: 24px;
-    }
-
-    .sidebar-logo {
-        font-size: 30px;
-    }
-
-    .header {
-        gap:20px;
-        padding: 20px; /* Add some padding to the header for spacing */
+        justify-content: center;
     }
 
     .header-cell-1 {
-        gap: 20px; /* Adjust the gap between elements in header-cell-1 for a modern look */
-    }
-    
-    .profile, .button-container {
-        justify-content: center; /* Center align elements within profile and button-container */
+        display: none;
     }
 
-    .button {
-        width: 100%; /* Make the buttons take the full width of the container */
+    .welcome {
+        grid-template-columns: 1fr;
     }
-    #form {
-        width: 100%; /* Make the search bar span the entire cell */
+
+    .header-cell-2 {
+        margin-bottom: 50px;
     }
-}
+
+    .welcome-icon, p, h3 {
+        justify-content: center;
+        text-align: ce;
+    }
+
+    svg {
+        width: 200px;
+    }
+
+    .button-container {
+        margin: 0 10px;
+    }
 }
